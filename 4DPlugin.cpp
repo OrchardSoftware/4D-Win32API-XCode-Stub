@@ -562,6 +562,18 @@ void PluginMain( PA_long32 selector, PA_PluginParameters params )
 			sys_ProcessStart( params );
 			break;
 
+		case 135 :
+			sys_LoggingStart( params );
+			break;
+
+		case 136 :
+			sys_LoggingStop( params );
+			break;
+
+		case 137 :
+			sys_IsWow64Process( params );
+			break;
+
 	}
 }
 
@@ -2891,3 +2903,30 @@ void sys_ProcessStart( PA_PluginParameters params )
 	PA_ReturnLong( params, returnValue );
 }
 
+void sys_LoggingStart( PA_PluginParameters params )
+{
+	PA_Unichar* Param1_uchars;
+	PA_Unistring* Param1;
+	PA_long32 returnValue;
+
+	Param1 = PA_GetStringParameter( params, 1 );
+	Param1_uchars = PA_GetUnistring( Param1 );
+
+	PA_ReturnLong( params, returnValue );
+}
+
+void sys_LoggingStop( PA_PluginParameters params )
+{
+	PA_long32 returnValue;
+
+	PA_ReturnLog( params, returnValue );
+}
+
+void sys_IsWow64Process( PA_PluginParameters params )
+{
+	PA_long32 Param1;
+	PA_long32 returnValue;
+
+	PA_SetLongParameter( params, 1, Param1 );
+	PA_ReturnLong( params, returnValue );
+}

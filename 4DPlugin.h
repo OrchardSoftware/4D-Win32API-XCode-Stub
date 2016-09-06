@@ -148,3 +148,6 @@ void sys_DecryptFile( PA_PluginParameters params );
 void sys_HashText( PA_PluginParameters params );
 void sys_GetDiskFreeSpace( PA_PluginParameters params );
 void sys_ProcessStart( PA_PluginParameters params );
+void sys_IsWow64Process( PA_PluginParameters params );
+void sys_LoggingStart( PA_PluginParameters params );
+void sys_LoggingStop( PA_PluginParameters params );
